@@ -1,0 +1,19 @@
+.fab {
+  position: fixed;
+  right: calc(20px + env(safe-area-inset-right, 0px));
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  z-index: 9;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  color: var(--on-wa);
+  background: var(--wa);
+  box-shadow: 0 8px 24px -10px rgb(0 0 0 / 40%);
+}
+
+.fab svg {
+  width: 26px;
+  height: 26px;
+}

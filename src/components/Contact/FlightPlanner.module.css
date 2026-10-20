@@ -1,0 +1,120 @@
+.planner {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.body {
+  display: grid;
+  gap: 1.4rem;
+  padding: 1.5rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.field > label,
+.field > legend,
+.label {
+  padding: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* <legend> não participa do grid do fieldset; o espaçamento vem daqui. */
+.field > legend {
+  margin-bottom: 0.55rem;
+}
+
+.field input[type="text"],
+.field select {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  font: 300 1rem/1.4 var(--f-body);
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.field input[type="text"]:focus,
+.field select:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ---------- Chips de destino (radios) ---------- */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chips input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chips span {
+  display: block;
+  padding: 0.55rem 1rem;
+  font-size: 0.92rem;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+
+.chips span:hover {
+  border-color: var(--ink);
+}
+
+.chips input:checked + span {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.chips input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.preview {
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  border-left: 1px solid var(--accent);
+  font: italic 300 1.2rem/1.45 var(--f-display);
+  color: var(--ink);
+}

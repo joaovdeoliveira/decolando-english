@@ -1,0 +1,13 @@
+.head {
+  display: grid;
+  gap: var(--s2);
+  margin-bottom: var(--s4);
+}
+
+.head :global(.kicker) {
+  margin-bottom: 0;
+}
+
+.head p {
+  color: var(--muted);
+}

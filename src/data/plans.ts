@@ -1,0 +1,55 @@
+import type { Plan } from "./types";
+
+export const plans: Plan[] = [
+  {
+    id: "economica",
+    name: "Econômica",
+    cabin: "Classe E",
+    tagline: "Para começar com constância.",
+    arrival: "Base sólida",
+    features: [
+      { term: "Aulas", detail: "1 por semana · 50 min" },
+      { term: "Prática", detail: "Kahoot e formulários de revisão" },
+      { term: "Material", detail: "Digital, incluso" },
+    ],
+    monthlyPrice: 220,
+    classesPerMonth: 4,
+    seat: "1A",
+    gate: "A1",
+  },
+  {
+    id: "executiva",
+    name: "Executiva",
+    cabin: "Mais escolhido",
+    tagline: "Evolução rápida, com foco no seu objetivo.",
+    arrival: "Conversação",
+    features: [
+      { term: "Aulas", detail: "2 por semana · 50 min" },
+      { term: "Rota", detail: "Focada no seu destino" },
+      { term: "Seminário", detail: "1 por mês, com feedback" },
+      { term: "Prática", detail: "Kahoot, formulários e material digital" },
+    ],
+    monthlyPrice: 400,
+    classesPerMonth: 8,
+    seat: "2A",
+    gate: "B2",
+    featured: true,
+  },
+  {
+    id: "primeira-classe",
+    name: "Primeira Classe",
+    cabin: "Classe F",
+    tagline: "Intensivo, para quem tem prazo.",
+    arrival: "Fluência",
+    features: [
+      { term: "Aulas", detail: "2 por semana · 60 min" },
+      { term: "Simulações", detail: "Entrevistas ou reuniões reais" },
+      { term: "Suporte", detail: "Tira-dúvidas pelo WhatsApp" },
+      { term: "Relatório", detail: "Progresso mensal por escrito" },
+    ],
+    monthlyPrice: 560,
+    classesPerMonth: 8,
+    seat: "1F",
+    gate: "C1",
+  },
+];

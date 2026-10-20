@@ -1,0 +1,79 @@
+/* Design tokens. Plum é o único acento; o painel de embarque tem paleta própria. */
+:root {
+  --paper: #ffffff;
+  --paper-2: #f7f5f9;
+  --card: #ffffff;
+  --ink: #241a2c;
+  --muted: #6a6272;
+  --line: #d9d3df;
+  --accent: #4a1a6e;
+  --accent-soft: #7a3ca8;
+  --on-accent: #ffffff;
+  --blush: #c9779e;
+
+  --board: #1e1625;
+  --board-ink: #f1e3b8;
+  --board-desc: #d9d0e0;
+  --board-muted: #9c92a6;
+  --board-line: #352b3e;
+  --board-go: #8fd3a8;
+  --globe: #140e1a;
+
+  --wa: #177a42;
+  --on-wa: #ffffff;
+
+  --f-display: "Cormorant", Georgia, serif;
+  --f-body: "Jost", system-ui, sans-serif;
+  --f-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --s1: 0.5rem;
+  --s2: 1rem;
+  --s3: 1.5rem;
+  --s4: 2.5rem;
+  --s5: 4rem;
+  --s6: 7rem;
+
+  --radius: 2px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --header-h: 72px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #16111a;
+    --paper-2: #1d1722;
+    --card: #1f1924;
+    --ink: #f1ecf4;
+    --muted: #aba2b4;
+    --line: #3a3141;
+    --accent: #c6a3e6;
+    --accent-soft: #a981d2;
+    --on-accent: #16111a;
+    --blush: #e39bbe;
+    --board: #0f0b12;
+    --board-line: #2c2433;
+    --wa: #2baa5e;
+    --on-wa: #0b1710;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper: #16111a;
+  --paper-2: #1d1722;
+  --card: #1f1924;
+  --ink: #f1ecf4;
+  --muted: #aba2b4;
+  --line: #3a3141;
+  --accent: #c6a3e6;
+  --accent-soft: #a981d2;
+  --on-accent: #16111a;
+  --blush: #e39bbe;
+  --board: #0f0b12;
+  --board-line: #2c2433;
+  --wa: #2baa5e;
+  --on-wa: #0b1710;
+  color-scheme: dark;
+}

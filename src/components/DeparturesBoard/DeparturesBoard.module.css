@@ -1,0 +1,102 @@
+.board {
+  overflow-x: auto;
+  background: var(--board);
+  border-radius: var(--radius);
+}
+
+.board table {
+  width: 100%;
+  min-width: 680px;
+  border-collapse: collapse;
+  color: var(--board-ink);
+}
+
+.board caption {
+  caption-side: top;
+  padding: 1.1rem 1.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--board-line);
+  font: 400 0.72rem/1 var(--f-body);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--board-muted);
+}
+
+.board caption time {
+  float: right;
+  font-family: var(--f-mono);
+  letter-spacing: 0.08em;
+  color: var(--board-ink);
+}
+
+.board th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font: 400 0.7rem/1 var(--f-body);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--board-muted);
+}
+
+.board td {
+  padding: 1.15rem 1.5rem;
+  vertical-align: top;
+  border-top: 1px solid var(--board-line);
+  font: 400 0.95rem/1.4 var(--f-mono);
+}
+
+.board .destination {
+  font-size: 1.02rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.board .description {
+  max-width: 380px;
+  font: 300 0.98rem/1.55 var(--f-body);
+  color: var(--board-desc);
+}
+
+.board .gate {
+  color: var(--board-muted);
+}
+
+.status {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--board-ink);
+}
+
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: var(--board-go);
+}
+
+.boarding .status {
+  color: var(--board-go);
+}
+
+.boarding .status::before {
+  animation: blink 1.4s steps(2) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boarding .status::before {
+    animation: none;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}

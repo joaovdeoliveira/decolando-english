@@ -1,0 +1,221 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--s5) var(--s6);
+}
+
+.grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 6fr 5fr;
+  gap: var(--s5);
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.9rem, 7.6vw, 6.2rem);
+  max-width: 10ch;
+}
+
+.hero p {
+  margin: var(--s3) 0 var(--s4);
+  font-size: 1.15rem;
+  max-width: 42ch;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.signs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin-top: var(--s4);
+  padding: 0;
+  list-style: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.signs li + li::before {
+  content: "→";
+  margin-right: 1.4rem;
+  color: var(--line);
+  letter-spacing: 0;
+}
+
+/* ---------- Globo ---------- */
+.frame {
+  position: relative;
+  justify-self: center;
+  width: min(420px, 100%);
+  aspect-ratio: 1;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.disc {
+  position: absolute;
+  inset: 7%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--globe);
+  box-shadow: 0 30px 60px -30px rgb(36 16 58 / 55%);
+}
+
+.disc video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.orbit {
+  position: absolute;
+  inset: -1px;
+  animation: orbit 24s linear infinite;
+}
+
+.orbit svg {
+  position: absolute;
+  left: 50%;
+  top: -9px;
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  color: var(--accent);
+  background: var(--paper);
+  border-radius: 50%;
+}
+
+.frame figcaption {
+  position: absolute;
+  right: -4px;
+  bottom: 6%;
+  padding: 0.3rem 0.7rem;
+  font: italic 300 1.15rem/1.2 var(--f-display);
+  color: var(--muted);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+/* ---------- Rota de voo ---------- */
+.flight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.flight path {
+  fill: none;
+  stroke: var(--accent-soft);
+  stroke-width: 1.2;
+  stroke-dasharray: 1 9;
+  stroke-linecap: round;
+  opacity: 0.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.flyer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  color: var(--accent);
+  pointer-events: none;
+  /* Precisa ser igual a FLIGHT_PATH em Hero.tsx. */
+  offset-path: path("M -40 470 C 240 520, 380 110, 700 170 S 1180 70, 1560 -40");
+  offset-rotate: auto;
+  animation: fly 14s var(--ease) infinite;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+
+  .frame {
+    order: -1;
+    width: min(300px, 80%);
+  }
+
+  .flyer,
+  .frame figcaption {
+    display: none;
+  }
+}
+
+/* ---------- Animações ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .word {
+    display: inline-block;
+    animation: blurIn 0.7s var(--ease) both;
+  }
+
+  .reveal {
+    animation: rise 0.9s var(--ease) 0.45s both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit {
+    animation: none;
+  }
+
+  .flyer {
+    display: none;
+  }
+}
+
+@keyframes orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly {
+  0% {
+    offset-distance: 0%;
+    opacity: 0;
+  }
+  6%,
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes blurIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}

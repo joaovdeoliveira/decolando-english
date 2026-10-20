@@ -1,0 +1,176 @@
+@import "./tokens.css";
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + env(safe-area-inset-top, 0px));
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font: 300 1.0625rem/1.7 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Cobre a área do notch para o conteúdo não aparecer por trás. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 11;
+  background: var(--paper);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--f-display);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+}
+
+h1 em,
+h2 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+p {
+  max-width: 58ch;
+}
+
+a {
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- Layout ---------- */
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+
+@media (max-width: 480px) {
+  .wrap {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+}
+
+section {
+  padding-block: var(--s6);
+}
+
+@media (max-width: 720px) {
+  section {
+    padding-block: var(--s5);
+  }
+}
+
+.alt {
+  background: var(--paper-2);
+}
+
+.kicker {
+  display: block;
+  margin-bottom: var(--s3);
+  font: 400 0.72rem/1 var(--f-body);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.fine {
+  margin-top: var(--s3);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.95rem 1.75rem;
+  font: 400 0.95rem var(--f-body);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition:
+    background 0.25s var(--ease),
+    color 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+.btn-wa {
+  background: var(--wa);
+  border-color: var(--wa);
+  color: var(--on-wa);
+}
+
+.btn-primary:hover,
+.btn-wa:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}

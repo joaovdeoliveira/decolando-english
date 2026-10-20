@@ -1,0 +1,68 @@
+.contact {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: var(--s5);
+  align-items: start;
+}
+
+.contact > * {
+  min-width: 0;
+}
+
+.contact h2 {
+  margin-bottom: var(--s3);
+}
+
+.copy p {
+  color: var(--muted);
+}
+
+.number {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: var(--s4);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+
+.number small {
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.number div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.number code {
+  font: 400 1.8rem/1 var(--f-display);
+  color: var(--ink);
+  user-select: all;
+}
+
+.copyButton {
+  padding: 0.5rem 0.8rem;
+  font: 400 0.8rem var(--f-body);
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.copyButton:hover {
+  border-color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .contact {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+}
