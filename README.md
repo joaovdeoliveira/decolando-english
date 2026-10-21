@@ -46,17 +46,3 @@ src/
 
 O conteúdo fica separado da apresentação: para mudar textos de planos, destinos ou métodos,
 edite os arquivos em `src/data/`, sem mexer nos componentes.
-
-## Antes de publicar
-
-- [ ] **WhatsApp:** troque `whatsappNumber` (só dígitos, com DDI: `5511987654321`) e
-      `whatsappDisplay` em [`src/config/site.ts`](src/config/site.ts).
-- [ ] **Sobre:** troque o texto de exemplo em
-      [`src/components/About/About.tsx`](src/components/About/About.tsx) pela história real da
-      Débora e a imagem `src/assets/decolando-logo.jpg` por um retrato dela.
-- [ ] **Preços:** os valores em [`src/data/plans.ts`](src/data/plans.ts) são de exemplo.
-
-## Deploy
-
-O build gera um site estático em `dist/`, que pode ir para Vercel, Netlify, Cloudflare Pages ou
-GitHub Pages (neste último, defina `base` em `vite.config.ts` com o nome do repositório).
