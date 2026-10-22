@@ -46,3 +46,5 @@ src/
 
 O conteúdo fica separado da apresentação: para mudar textos de planos, destinos ou métodos,
 edite os arquivos em `src/data/`, sem mexer nos componentes.
+
+Acesse em: https://joaovdeoliveira.github.io/decolando-english/
